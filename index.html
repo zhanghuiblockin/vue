@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>vue</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script>
+  var phoneWidth = parseInt(window.screen.width);
+  var phoneScale = phoneWidth / 1300;
+  document.write('<meta name="viewport" content="width=1300, minimum-scale = ' + phoneScale + ', maximum-scale = 1">');
+  </script>
+  <link rel="shortcut icon" href="https://s.blockin.com/logo/favicon.ico" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_469029_i2cfo208v7czncdi.css">
+  <script src="https://cdn.bootcss.com/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
+  <title>Poolin</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>
