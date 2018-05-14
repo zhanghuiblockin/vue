@@ -2,6 +2,8 @@
    <div>HomePage-{{ coin }}-{{ lang }}-{{ count }}- {{ coins }}
      <p><button @click="changeCount">mutations同步方法</button></p>
      <p><button @click="fetchCoin">actions异步方法</button></p>
+     <p>{{ config }}</p>
+     <p><button @click="fetchConfig">actions异步方法获取config</button></p>
    </div>
 </template>
 
@@ -19,7 +21,8 @@ export default {
       coin: state => state.coins.current,
       lang: state => state.lang.current,
       count: state => state.test.count,
-      coins: state => state.test.all
+      coins: state => state.test.all,
+      config: state => state.test.config
     })
   },
   watch: {},
@@ -35,6 +38,7 @@ export default {
   mounted () {
     console.log('4mounted')
     console.log(this.$store)
+    this.$axios.get('http://ltc-bj-dev.c6396418dd7954b228d8b967c8a929103.cn-beijing.alicontainer.com/api/public/v1/url').then(res => { console.log(res) }).catch(err => { console.log(err) })
   },
   beforeUpdate () {
     console.log('5beforeUpdata')
@@ -60,6 +64,9 @@ export default {
     },
     fetchCoin () {
       this.$store.dispatch('fetchCoin')
+    },
+    fetchConfig () {
+      this.$store.dispatch('fetchConfig')
     }
   }
 }
