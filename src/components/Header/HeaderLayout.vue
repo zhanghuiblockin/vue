@@ -91,7 +91,7 @@
         <li>
           <a href="https://blockin.zendesk.com/hc/zh-cn" target="_blank">{{$t('m.bangzhu')}}</a>
         </li>
-        <li v-if="!$store.state.is_login&&$store.state.read_token.length==0">
+        <li v-if="!$store.state.is_login&&$store.state.read_token.length === 0">
           <a href="javascript:;" @click="login">{{$t('m.denglu')}}</a>
         </li>
       </ul>

@@ -11,9 +11,11 @@ import langs from '@/assets/lang'
 import store from '@/stores'
 /* eslint-disable no-unused-vars */
 import * as filters from '@/services/filters'
+import * as directives from "@/services/directives"
 
 import '@/assets/css/theme-custom/index.css'
 import '@/assets/styles/site.less'
+console.log(filters);
 
 Vue.use(VueClipboard)
 Vue.use(ElementUI)
