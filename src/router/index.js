@@ -1,17 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
-import Template from '@/pages/test'
-
 Vue.use(Router)
 
-export default new Router({
+const SiteLayout = () => import('@/pages/SiteLayout')
+const HomePage = () => import('@/pages/HomePage')
+const PoolStatsPage = () => import('@/pages/PoolStatsPage')
+
+const router = new Router({
   mode: 'history',
   routes: [
     {
       path: '/',
-      name: 'Template',
-      component: Template
+      component: SiteLayout,
+      children: [
+        { path: '', name: 'home', component: HomePage },
+        { path: '/:coin_type/stats', name: 'stats', component: PoolStatsPage }
+      ]
     }
   ]
 })
+
+export default router
