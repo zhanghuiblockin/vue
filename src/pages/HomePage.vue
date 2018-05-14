@@ -1,8 +1,12 @@
 <template>
-   <div>HomePage</div>
+   <div>HomePage-{{ coin }}-{{ lang }}-{{ count }}- {{ coins }}
+     <p><button @click="changeCount">mutations同步方法</button></p>
+     <p><button @click="fetchCoin">actions异步方法</button></p>
+   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'HomePage',
   components: {},
@@ -10,7 +14,14 @@ export default {
   data () {
     return {}
   },
-  computed: {},
+  computed: {
+    ...mapState({
+      coin: state => state.coins.current,
+      lang: state => state.lang.current,
+      count: state => state.test.count,
+      coins: state => state.test.all
+    })
+  },
   watch: {},
   beforeCreate () {
     console.log('1beforeCreate')
@@ -23,6 +34,7 @@ export default {
   },
   mounted () {
     console.log('4mounted')
+    console.log(this.$store)
   },
   beforeUpdate () {
     console.log('5beforeUpdata')
@@ -42,6 +54,13 @@ export default {
   destroyed () {
     console.log('8destroyed')
   },
-  methods: {}
+  methods: {
+    changeCount () {
+      this.$store.commit('increment')
+    },
+    fetchCoin () {
+      this.$store.dispatch('fetchCoin')
+    }
+  }
 }
 </script>

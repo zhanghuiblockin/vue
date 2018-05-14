@@ -26,7 +26,3 @@ export default {
   methods: {}
 }
 </script>
-
-<style lang="less">
-@import url('../assets/less/style.less');
-</style>
