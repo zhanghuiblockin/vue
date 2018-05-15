@@ -2,6 +2,7 @@
    <div class="header">
      <router-link :to="{ name:'home' }">首页</router-link>
      <router-link :to="{ name:'stats',params:{ coin_type: 'ltc'} }">统计</router-link>
+     <router-link :to="{ name:'login' }">登录</router-link>
    </div>
  </template>
 <script>

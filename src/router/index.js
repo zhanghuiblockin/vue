@@ -5,6 +5,7 @@ Vue.use(Router)
 const SiteLayout = () => import('@/pages/SiteLayout')
 const HomePage = () => import('@/pages/HomePage')
 const PoolStatsPage = () => import('@/pages/PoolStatsPage')
+const Login = () => import('@/pages/Login')
 
 const router = new Router({
   mode: 'history',
@@ -14,7 +15,8 @@ const router = new Router({
       component: SiteLayout,
       children: [
         { path: '', name: 'home', component: HomePage },
-        { path: '/:coin_type/stats', name: 'stats', component: PoolStatsPage }
+        { path: '/:coin_type/stats', name: 'stats', component: PoolStatsPage },
+        { path: '/login', name: 'login', component: Login }
       ]
     }
   ]

@@ -14,5 +14,6 @@ export default {
 </script>
 
 <style lang="less">
+@import url('https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css');
 @import url('./assets/less/style.less');
 </style>
